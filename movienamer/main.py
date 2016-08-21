@@ -7,6 +7,8 @@ from identify import identify
 from confirm import confirm
 from keywords import subtitle_extensions, video_extensions
 
+from tvnamer.utils import makeValidFilename
+
 def movienamer(movie):
     directory = '/'.join(movie.split('/')[:-1])
     filename, extension = os.path.splitext(os.path.basename(movie))
@@ -31,8 +33,10 @@ def movienamer(movie):
         if directory == '':
             directory = '.'
 
+        title = makeValidFilename(result['title'], False, True, "", "_")
+
         dest = (directory + '/' +
-                result['title'] +
+                title +
                 ' (' + result['year'] + ')' +
                 extension)
 
