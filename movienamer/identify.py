@@ -83,7 +83,7 @@ def identify(filename, directory=None):
         try:
             results[i]['year'] = re.findall(
                 '[0-9]{4}', result['release_date'])[0]
-        except TypeError:
+        except:
             results[i]['year'] = None
 
     if len(results) == 0:
