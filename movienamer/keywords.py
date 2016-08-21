@@ -39,7 +39,7 @@ year_extract_patterns = [re.compile(pattern) for pattern in [
 ]]
 
 video_extensions = [
-    '.mkv', '.mp4', '.avi', '.flv', '.rmvb', '.wmv', '.mpeg'
+    '.mkv', '.mp4', '.m4v', '.avi', '.flv', '.rmvb', '.wmv', '.mpeg'
 ]
 
 subtitle_extensions = [
