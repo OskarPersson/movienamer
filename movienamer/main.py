@@ -33,7 +33,7 @@ def movienamer(movie):
 
         dest = (directory + '/' +
                 result['title'] +
-                ' [' + result['year'] + ']' +
+                ' (' + result['year'] + ')' +
                 extension)
 
         if os.path.isfile(dest):

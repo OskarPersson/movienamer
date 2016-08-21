@@ -8,7 +8,7 @@ def _confirmation_text_single(result, filename, extension):
     prompt = ['Processing file: %s' % (filename + extension)]
 
     if result['year'] is not None:
-        prompt.append('Detected movie: %s [%s]'
+        prompt.append('Detected movie: %s (%s)'
                       % (result['title'], result['year']))
     else:
         prompt.append('Detected movie: %s' % result['title'])
@@ -49,7 +49,7 @@ def _combine_multiple_options(results, start):
     prompt = []
 
     if results[start]['year'] is not None:
-        prompt.append('%d: %s [%s] (default)'
+        prompt.append('%d: %s (%s) (default)'
                       % (start+1, results[start]['title'],
                          results[start]['year']))
     else:
@@ -60,7 +60,7 @@ def _combine_multiple_options(results, start):
             prompt.append('%d: %s' % (start+i+2, result['title']))
             continue
 
-        prompt.append('%d: %s [%s]'
+        prompt.append('%d: %s (%s)'
                       % (start+i+2, result['title'], result['year']))
 
     prompt += [
